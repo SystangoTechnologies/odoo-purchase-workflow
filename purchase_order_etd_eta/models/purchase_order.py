@@ -7,8 +7,8 @@ from odoo import fields, models
 class PurchaseOrder(models.Model):
     _inherit = "purchase.order"
 
-    date_etd = fields.Date(string="ETD", help="Estimated Time of Departure")
-    date_eta = fields.Date(string="ETA", help="Estimated Time of Arrival")
+    date_etd = fields.Date(string="ETA", help="Estimated Time of Departure")
+    date_eta = fields.Date(string="ETD", help="Estimated Time of Arrival")
     shipping_schedule_note = fields.Char(
         help="Additional shipping schedule instructions or clarifications. "
         "Use this field when ETD or ETA cannot be expressed as a specific date "

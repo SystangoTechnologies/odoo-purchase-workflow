@@ -26,7 +26,7 @@ class PurchaseOrderLine(models.Model):
     @api.depends("sequence", "order_id.order_line")
     def _compute_visible_sequence(self):
         for po in self.mapped("order_id"):
-            sequence = 1
+            sequence = 0
             order_lines = po.order_line.filtered(lambda pol: not pol.display_type)
             for line in sorted(order_lines, key=lambda pol: pol.sequence):
                 line.visible_sequence = sequence
